@@ -15,10 +15,9 @@ public class Tiempo  {
 
     private Timer timer = new Timer(); 
     private int segundos=0;
-
     //Clase interna que funciona como contador
     class Contador extends TimerTask {
-        Jgame main_game = new Jgame();
+        
         public void run() {
             segundos++;
         int num,hor,min,seg;
@@ -27,16 +26,16 @@ public class Tiempo  {
         min=(num-(3600*hor))/60;
         seg=num-((hor*3600)+(min*60));
         System.out.println(min+":"+seg+"s");
-        
-        main_game.contador.setText("dadsd");
         }
     }
     //Crea un timer, inicia segundos a 0 y comienza a contar
     public void Contar()
     {
+        
         this.segundos=0;
         timer = new Timer();
         timer.schedule(new Contador(), 0, 1000);
+        //main_game.contador.setText("dadsd");
     }
     //Detiene el contador
     public void Detener() {

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Juego;
+import java.util.Timer;
+import java.util.TimerTask;
 import modelos.Tiempo;
 /**
  *
@@ -14,6 +16,8 @@ public class Jgame extends javax.swing.JFrame {
     /**
      * Creates new form Jgame
      */
+    public Tiempo tiempo = new Tiempo();
+    public int i=0;
     public Jgame() {
         setTitle("Dia Mundial del Agua");
         setSize(400,400);
@@ -22,22 +26,13 @@ public class Jgame extends javax.swing.JFrame {
 	setVisible(true);
         setResizable(false);
         initComponents();
-        Tiempo tiempo = new Tiempo();
-        tiempo.Contar();        
-        int contar=tiempo.getSegundos();
-        tiempo_p(contar);
+        tiempo.Contar();
         //contador.setText();
 
     }
-    public void tiempo_p(int segundos){
-    int num,hor,min,seg;
-        System.out.println("ingrese los segundos ");
-        num=segundos;
-        hor=num/3600;
-        min=(num-(3600*hor))/60;
-        seg=num-((hor*3600)+(min*60));
-        contador.setText(min+":"+seg+"s");    
-    }
+    /***Contador**/
+    
+    /*contador*/
     public  void mejores(){
         DB bd = new DB();
         String[] pregunta = bd.generar_pregunta();
@@ -179,4 +174,5 @@ public class Jgame extends javax.swing.JFrame {
     private javax.swing.JLabel pregunta;
     private javax.swing.JLabel pregunta_numero;
     // End of variables declaration//GEN-END:variables
+
 }

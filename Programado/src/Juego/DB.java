@@ -48,8 +48,8 @@ public class DB {
             //4 Recorrer el ResultSet 
             String[] s = new String[2];
                 while (myrs.next()){
-                    s[0] = myrs.getString("Preguntas");
-                    s[1] = myrs.getString("Respuestas");
+                    s[0] = myrs.getString("pregunta");
+                    s[1] = myrs.getString("imagen");
                     s[2] = myrs.getString("id");
                     break;
                 }            
